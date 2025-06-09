@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atris Property Services - Reliable Handyman & Property Maintenance</title>
+    <meta name="description" content="Atris Property Services offers reliable and reasonably priced handyman services, home repairs, renovations, and property maintenance in Mickleham, VIC. Get a free quote today!">
+    <meta name="keywords" content="handyman, property services, home repair, renovation, maintenance, Mickleham, plumber, painter, deck repair, cleaning, furniture assembly, Atris Property Services">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#231F20',
+                        accent: '#F7931E',
+                        secondary: '#FBB03B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- Google SEO Schema Markup (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Atris Property Services",
+      "image": "https://placehold.co/1200x630/4CAF50/ffffff?text=Atris+Property+Services",
+      "@id": "https://www.atrispropertyservices.com.au/#organization",
+      "url": "https://www.atrispropertyservices.com.au/",
+      "telephone": "0426269874",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "", /* Consider adding a general service area or office if applicable */
+        "addressLocality": "Mickleham",
+        "addressRegion": "VIC",
+        "postalCode": "3064",
+        "addressCountry": "AU"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Property Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Home Repairs",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Plumbing Repairs"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Painting and Patch Up"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Outdoor Maintenance",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Deck Repair and Build"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gardening and Lawn Mowing"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body class="font-inter text-primary">
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Atris Property Services Home">
+                    <img src="https://placehold.co/40x40/231F20/ffffff?text=🛠️" alt="Atris Property Services Logo - Handyman Tools Icon" class="h-10 w-auto rounded-md">
+                    <span class="text-2xl font-bold text-primary">Atris Property Services</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-primary hover:text-accent font-medium transition duration-300" aria-current="page">Home</a>
+                <a href="about.html" class="text-primary hover:text-accent font-medium transition duration-300">About Us</a>
+                <a href="services.html" class="text-primary hover:text-accent font-medium transition duration-300">Services</a>
+                <a href="contact.html" class="text-primary hover:text-accent font-medium transition duration-300">Contact</a>
+                <div class="flex items-center space-x-3">
+                    <a href="tel:0426269874" class="bg-accent text-white font-bold py-2 px-4 rounded-full hover:bg-[#E08712] transition duration-300 flex items-center" aria-label="Call Atris Property Services: 0426 269 874">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        0426 269 874
+                    </a>
+                    <a href="https://wa.me/610426269874" target="_blank" class="bg-[#25D366] text-white font-bold p-2 rounded-full hover:bg-green-600 transition duration-300 flex items-center justify-center w-10 h-10" aria-label="Contact us on WhatsApp">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-primary bg-opacity-75 z-50 hidden md:hidden">
+            <div class="flex justify-end p-4">
+                <button id="close-mobile-menu" class="text-white text-3xl focus:outline-none" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="index.html" class="text-white text-2xl hover:text-accent transition duration-300" aria-current="page">Home</a>
+                <a href="about.html" class="text-white text-2xl hover:text-accent transition duration-300">About Us</a>
+                <a href="services.html" class="text-white text-2xl hover:text-accent transition duration-300">Services</a>
+                <a href="contact.html" class="text-white text-2xl hover:text-accent transition duration-300">Contact</a>
+                <div class="flex flex-col items-center space-y-4 mt-4">
+                    <a href="tel:0426269874" class="bg-white text-accent font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 flex items-center" aria-label="Call Atris Property Services: 0426 269 874">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        0426 269 874
+                    </a>
+                    <a href="https://wa.me/610426269874" target="_blank" class="bg-[#25D366] text-white font-bold p-2 rounded-full hover:bg-green-600 transition duration-300 flex items-center justify-center w-10 h-10" aria-label="Contact us on WhatsApp">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[600px] flex items-center justify-center text-white p-4" style="background-image: url('src/homepage-hero.jpg');">
+        <div class="absolute inset-0 bg-primary/50 rounded-lg"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto p-8 bg-primary bg-opacity-90 text-white rounded-xl shadow-2xl backdrop-blur-sm border-t-4 border-accent">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">Your Trusted Partner for Property Care</h1>
+            <p class="text-lg md:text-xl mb-8 animate-fade-in-up">Reliable, reasonably priced, and high-quality handyman and property maintenance services in Mickleham, VIC, and surrounding areas.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <a href="contact.html" class="bg-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#E08712] transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 w-full md:w-auto animate-fade-in-up delay-1s">
+                    <i class="fas fa-clipboard-list mr-2"></i>
+                    <span>Get a Free Quote</span>
+                </a>
+                <a href="services.html" class="bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 w-full md:w-auto animate-fade-in-up delay-1s">
+                    <i class="fas fa-tools mr-2"></i>
+                    <span>Our Services</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Our Comprehensive Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Home Repairs -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg border-t-4 border-accent">
+                    <div class="text-5xl text-accent mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Home Repairs</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Plumbing repairs and installations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Electrical fixes and upgrades</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Drywall repairs and painting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Door and window repairs</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Renovations -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg border-t-4 border-secondary">
+                    <div class="text-5xl text-secondary mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Renovations</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary text-lg mr-3"></i>
+                            <span>Kitchen remodeling</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary text-lg mr-3"></i>
+                            <span>Bathroom renovations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary text-lg mr-3"></i>
+                            <span>Room additions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary text-lg mr-3"></i>
+                            <span>Flooring installation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Property Maintenance -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg border-t-4 border-accent">
+                    <div class="text-5xl text-accent mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Property Maintenance</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Regular maintenance checks</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Gutter cleaning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Pressure washing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                            <span>Landscaping services</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="services.html" class="bg-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#E08712] transition duration-300 transform hover:scale-105 shadow-lg inline-flex items-center space-x-2">
+                    <span>Explore All Services</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Why Choose Atris Property Services?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1: Reliability -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-t-4 border-accent">
+                    <div class="text-5xl text-accent mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Reliable & Timely</h3>
+                    <p class="text-gray-600">Punctual service delivery and efficient project completion, respecting your time.</p>
+                </div>
+                <!-- Feature 2: Fair Pricing -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-t-4 border-secondary">
+                    <div class="text-5xl text-secondary mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Competitive Pricing</h3>
+                    <p class="text-gray-600">Quality services at transparent, reasonable rates with no hidden costs.</p>
+                </div>
+                <!-- Feature 3: Quality Workmanship -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-t-4 border-accent">
+                    <div class="text-5xl text-accent mb-6 transform transition-transform group-hover:rotate-6">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Expert Craftsmanship</h3>
+                    <p class="text-gray-600">Skilled professionals delivering exceptional quality on every project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews & QR Code Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">What Our Clients Say</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Google Reviews -->
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-lg border-t-4 border-accent">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center">
+                                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" class="h-8 mr-2">
+                                <div class="text-yellow-400 flex">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-2 text-primary font-bold">5.0</span>
+                                </div>
+                            </div>
+                            <a href="https://g.page/r/CY6uXzLsW8qZEB0/review" target="_blank" class="bg-accent text-white font-bold py-2 px-4 rounded-full hover:bg-[#E08712] transition duration-300 text-sm">
+                                Write a Review
+                            </a>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-lg p-4 shadow">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-yellow-400 flex">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">• 2 weeks ago</span>
+                                </div>
+                                <p class="text-gray-600">"Exceptional service! The team was professional, punctual, and did an amazing job with our home repairs. Highly recommended!"</p>
+                                <p class="mt-2 font-semibold text-primary">- Sarah M.</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow">
+                                <div class="flex items-center mb-2">
+                                    <div class="text-yellow-400 flex">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">• 1 month ago</span>
+                                </div>
+                                <p class="text-gray-600">"Great attention to detail and excellent communication throughout the project. Will definitely use their services again!"</p>
+                                <p class="mt-2 font-semibold text-primary">- John D.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <a href="https://g.page/r/CY6uXzLsW8qZEB0" target="_blank" class="text-accent hover:text-[#E08712] font-semibold inline-flex items-center">
+                                <span>View All Reviews</span>
+                                <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- QR Code -->
+                    <div class="text-center">
+                        <div class="bg-white rounded-xl p-8 shadow-lg border-t-4 border-secondary inline-block">
+                            <h3 class="text-xl font-bold text-primary mb-4">Scan to Find Us on Google</h3>
+                            <div class="mb-4">
+                                <img src="src/google-qr.png" alt="Google Business Profile QR Code" class="mx-auto w-48 h-48">
+                            </div>
+                            <p class="text-gray-600">Scan this QR code to view our business profile, hours, and more!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-secondary text-primary py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Enhance Your Property?</h2>
+            <p class="text-lg md:text-xl mb-8">Contact Atris Property Services today for a free, no-obligation quote!</p>
+            <a href="contact.html" class="bg-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#383234] transition duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                <i class="fas fa-envelope mr-2"></i>
+                <span>Request a Quote</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="footer-heading">Atris Property Services</h3>
+                <p class="text-gray-400">Your reliable partner for all handyman, renovation, and property maintenance needs in Mickleham, VIC, and surrounding areas.</p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Contact Us</h3>
+                <p class="text-gray-400">Phone: <a href="tel:0426269874" class="hover-text-white transition-all">0426 269 874</a></p>
+                <p class="text-gray-400">Email: <a href="mailto:info@atrispropertyservices.com.au" class="hover-text-white transition-all">info@atrispropertyservices.com.au</a></p>
+                <p class="text-gray-400">Service Area: Mickleham, VIC & Surrounding</p>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-8 border-t border-gray-700 pt-6">
+            <p>&copy; 2024 Atris Property Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Menu -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 md:hidden z-50">
+        <div class="flex justify-around items-center">
+            <!-- Call Button -->
+            <a href="tel:+61420998232" class="flex flex-col items-center text-primary hover:text-accent transition duration-300">
+                <div class="bg-primary/10 p-3 rounded-full mb-1">
+                    <i class="fas fa-phone text-xl"></i>
+                </div>
+                <span class="text-sm font-medium">Call Us</span>
+            </a>
+
+            <!-- Google Profile Button -->
+            <a href="#GOOGLE_PROFILE_URL" target="_blank" class="flex flex-col items-center text-primary hover:text-accent transition duration-300">
+                <div class="bg-primary/10 p-3 rounded-full mb-1">
+                    <i class="fab fa-google text-xl"></i>
+                </div>
+                <span class="text-sm font-medium">Google</span>
+            </a>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/61420998232" target="_blank" class="flex flex-col items-center text-primary hover:text-accent transition duration-300">
+                <div class="bg-primary/10 p-3 rounded-full mb-1">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </div>
+                <span class="text-sm font-medium">WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Add padding to prevent content from being hidden behind mobile menu -->
+    <style>
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 5rem;
+            }
+        }
+    </style>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script src="js/script.js"></script>
+</body>
+</html>
